@@ -15,17 +15,17 @@ services:
 devenv:
   version: '1.0'
   tools:
-    user: "dferigo"
+    user: "pako"
     gpu: "intel"
     x11: "xauth"
     matlab:
-      folder: "/usr/local/MATLAB/R2018a"
-      mac: "wlp2s0"
+      folder: "/usr/local/MATLAB/R2020a"
+      mac: "enp5s0"
       dotdir: "$HOME/.dockerdot/matlab:$HOME/.matlab"
     #init: "systemd"
     #gdb: true
     git:
-      username: "Diego Ferigo"
-      email: "diego.ferigo@iit.it"
+      username: "fjandrad"
+      email: "ing.andrade.francisco@gmail.com"
       ##gpg:
       ##  - key: XXXX
