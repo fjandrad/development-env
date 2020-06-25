@@ -7,8 +7,18 @@ default: latest intel nvidia
 tools:
 	docker build --rm \
 	--build-arg from=diegoferigo/devenv:nvidia \
-	--tag diegoferigo/tools \
+	--tag fjandrad/tools \
 	Tools/
+
+# =====
+# TOOLS-Plus
+# =====
+
+tools-plus:
+	docker build --rm \
+	--build-arg from=fjandrad/tools \
+	--tag fjandrad/tools-plus \
+	Tools_plus/
 
 # ===========
 # DEVELOPMENT
@@ -48,6 +58,9 @@ rl-ubuntu:
 
 push-tools: tools
 	docker push diegoferigo/tools
+
+push-tools-plus: tools-plus
+	docker push fjandrad/tools-plus
 
 push-development-latest: development-latest
 	docker push diegoferigo/development:latest
