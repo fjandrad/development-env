@@ -2,7 +2,7 @@ version: '2.3'
 
 services:
   tools:
-    image: "diegoferigo/tools"
+    image: "fjandrad/tools"
     container_name: "tools"
     command: "bash"
     init: true
@@ -15,12 +15,15 @@ services:
 devenv:
   version: '1.0'
   tools:
-    user: "pako"
-    gpu: "intel"
+    user:  
+      name: "fjandrad"
+      uid: 1001
+      gid: 1001
+    gpu: "nvidia"
     x11: "xauth"
     matlab:
       folder: "/usr/local/MATLAB/R2020a"
-      mac: "enp5s0"
+      mac: "enp3s0"
       dotdir: "$HOME/.dockerdot/matlab:$HOME/.matlab"
     #init: "systemd"
     #gdb: true

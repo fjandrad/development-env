@@ -20,7 +20,7 @@ services:
 devenv:
   version: '1.0'
   development:
-    user: "pako"
+    user: "fjandrad"
     project_dir: "$HOME/git"
     resources:
       directories:
@@ -32,14 +32,14 @@ devenv:
       files:
         - "$HOME/.dockerdot/z:$HOME/.z"
         - "$HOME/.dockerdot/bash_history:$HOME/.bash_history"
-    gpu: "intel"
+    gpu: "nvidia"
     x11: "xauth"
     matlab:
-      folder: "/usr/local/MATLAB/R2020a"
-      mac: "enp5s0"
+      folder: "/home/fjandrad/Software"
+      mac: "enp3s0"
       dotdir: "$HOME/.dockerdot/matlab:$HOME/.matlab"
     #init: "systemd"
-    gdb: true
+    # gdb: fa
     git:
       username: "fjandrad"
       email: "ing.andrade.francisco@gmail.com"

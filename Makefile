@@ -11,14 +11,24 @@ tools:
 	Tools/
 
 # =====
-# TOOLS-Plus
+# TOOLS-Pal
 # =====
 
-tools-plus:
+tools-pal:
 	docker build --rm \
-	--build-arg from=fjandrad/tools \
-	--tag fjandrad/tools-plus \
-	Tools_plus/
+	--build-arg from=fjandrad/devenv:pal \
+	--tag fjandrad/tools-pal \
+	Tools_pal/
+
+# =====
+# REEM-C
+# =====
+
+reem-c:
+	docker build --rm \
+	--build-arg from=fjandrad/tools-pal \
+	--tag fjandrad/reem-c \
+	REEM_C/
 
 # ===========
 # DEVELOPMENT
@@ -59,8 +69,8 @@ rl-ubuntu:
 push-tools: tools
 	docker push diegoferigo/tools
 
-push-tools-plus: tools-plus
-	docker push fjandrad/tools-plus
+push-tools-pal: tools-pal
+	docker push fjandrad/tools-pal
 
 push-development-latest: development-latest
 	docker push diegoferigo/development:latest

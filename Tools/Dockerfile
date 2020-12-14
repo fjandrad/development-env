@@ -19,6 +19,7 @@ RUN apt-get update &&\
         octave \
         trash-cli \
         xterm \
+        terminator \
         curl \
         unzip \
         mesa-utils \
