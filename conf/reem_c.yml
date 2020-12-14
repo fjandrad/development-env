@@ -1,0 +1,35 @@
+version: '2.3'
+
+services:
+  reem-c:
+    image: "fjandrad/reem-c"
+    container_name: "reem-c"
+    command: "bash"
+    init: true
+    ports:
+      - 8000:8000
+      - 8888:8888
+    stdin_open: true
+    tty: true
+    
+
+
+devenv:
+  version: '1.0'
+  reem-c:
+    user: "fjandrad"
+    project_dir: "$HOME/workspace" 
+    gpu: "nvidia"
+    x11: "xauth"
+    matlab:
+      folder: "/home/fjandrad/Software"
+      mac: "enp3s0"
+      dotdir: "$HOME/.dockerdot/matlab:$HOME/.matlab"
+    #init: "systemd"
+    #gdb: true
+    git:
+      username: "fjandrad"
+      email: "ing.andrade.francisco@gmail.com"
+      ##gpg:
+      ##  - key: XXXX
+    
