@@ -2,9 +2,9 @@
 
 # Colors, colors, colors
 if [ $UID -ne 0 ]; then
-	PS1='${debian_chroot:+($debian_chroot)}\[\e[36;1m\]\u\[\e[0m\]@\H:\[\e[30;1m\]\w\[\e[0m\]\[\e[00;36m\]$(__git_ps1 " (%s)")\[\e[36;1m\]>\[\e[0m\]\[\e[1m\] '
+	PS1='${debian_chroot:+($debian_chroot)}\[\e[36;1m\]\u\[\e[0m\]@docker\[\033[00m\]:\[\e[30;1m\]\w\[\e[0m\]\[\e[00;36m\]$(__git_ps1 " (%s)")\[\e[36;1m\]>\[\e[0m\]\[\e[1m\] '
 else
-	PS1='${debian_chroot:+($debian_chroot)}\[\e[31;1m\]\u\[\e[0m\]@\H:\[\e[30;1m\]\w\[\e[31;1m\]#\[\e[0m\]\[\e[1m\] '
+	PS1='${debian_chroot:+($debian_chroot)}\[\e[31;1m\]\u\[\e[0m\]@docker\[\033[00m\]:\[\e[30;1m\]\w\[\e[31;1m\]#\[\e[0m\]\[\e[1m\] '
 fi
 
 # After changing user, cd inside $HOME. Use $(cd -) to get back to the previous folder
@@ -135,3 +135,12 @@ fi
 if [[ -x $(which gazebo) ]] ; then
 	alias gazebo='gazebo -u'
 fi
+
+
+# Ros Aliases
+export ROS_HOSTNAME=localhost
+export ROS_MASTER_URI=http://localhost:11311
+export ROS_IP=127.0.0.1
+
+alias ros_robot="source /usr/etc/rosmaster/rosmaster_robot.env"
+alias ros_local="source /usr/etc/rosmaster/rosmaster_localhost.env"

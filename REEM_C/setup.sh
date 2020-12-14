@@ -24,3 +24,8 @@ echo "==> Change .local and .config permissions"
 # Change the permissions of .local and .config
 #[ -d /home/${USERNAME}/.local ] && chown -R ${USERNAME}:${USERNAME} /home/${USERNAME}/.local
 #[ -d /home/${USERNAME}/.config ] && chown -R ${USERNAME}:${USERNAME} /home/${USERNAME}/.config
+
+# Add addresses for robot computers
+echo "10.68.1.10 reemc-7c" >> /etc/hosts
+echo "10.68.1.11 reemc-7m" >> /etc/hosts
+echo "10.68.1.12 reemc-7j" >> /etc/hosts
