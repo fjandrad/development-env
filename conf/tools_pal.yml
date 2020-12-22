@@ -2,7 +2,7 @@ version: '2.3'
 
 services:
   tools-plus:
-    image: "fjandrad/tools-pal"
+    image: "git.uwaterloo.ca:5050/hcrmi/lab/human-centred-robotics-lab/utilities_hcrl/tools_pal"
     container_name: "tools-pal"
     command: "bash"
     init: true

@@ -2,7 +2,7 @@ version: '2.3'
 
 services:
   reem-c:
-    image: "fjandrad/reem-c"
+    image: "git.uwaterloo.ca:5050/hcrmi/lab/human-centred-robotics-lab/utilities_hcrl/reemc"
     container_name: "reem-c"
     command: "bash"
     init: true
@@ -11,14 +11,14 @@ services:
       - 8888:8888
     stdin_open: true
     tty: true
-    
+
 
 
 devenv:
   version: '1.0'
   reem-c:
     user: "fjandrad"
-    project_dir: "$HOME/workspace" 
+    project_dir: "$HOME/workspace"
     gpu: "nvidia"
     x11: "xauth"
     matlab:
@@ -32,4 +32,3 @@ devenv:
       email: "ing.andrade.francisco@gmail.com"
       ##gpg:
       ##  - key: XXXX
-    
